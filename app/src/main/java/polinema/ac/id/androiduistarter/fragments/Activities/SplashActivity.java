@@ -10,11 +10,6 @@ import polinema.ac.id.androiduistarter.R;
 
 public class SplashActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +24,4 @@ public class SplashActivity extends AppCompatActivity {
             }
         },5000);
     }
-
-
 }
