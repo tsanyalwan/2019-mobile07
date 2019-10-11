@@ -20,22 +20,22 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        loadFragment(new FoodFragment());
+        loadFragment(new FoodFragment());
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         // beri listener pada saat item/menu bottomnavigation terpilih
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
-//    private boolean loadFragment(FoodFragment foodFragment) {
-//        if (foodFragment != null) {
-//            getSupportFragmentManager().beginTransaction()
-//                    .replace(R.id.fragment_container, foodFragment)
-//                    .addToBackStack(null)
-//                    .commit();
-//            return true;
-//        }
-//        return false;
-//    }
+    private boolean loadFragment(Fragment foodFragment) {
+        if (foodFragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, foodFragment)
+                    .addToBackStack(null)
+                    .commit();
+            return true;
+        }
+        return false;
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new DiscountFragment();
                 break;
         }
-        return true;
+        return loadFragment(fragment);
     }
 
     @Override
