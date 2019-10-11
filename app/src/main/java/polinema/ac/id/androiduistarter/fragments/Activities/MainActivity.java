@@ -1,4 +1,4 @@
-package polinema.ac.id.androiduistarter.activities;
+package polinema.ac.id.androiduistarter.fragments.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
